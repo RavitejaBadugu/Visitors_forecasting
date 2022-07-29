@@ -24,3 +24,6 @@ This job we need to ran after creating of postgres statefulset.
 3) Runs the saved LSTM model for forecasting and stores the result.
 4) Creates the tables in postgres database.
 5) Inserts the data into it.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wVIMyEQaJNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
