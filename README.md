@@ -25,5 +25,8 @@ This job we need to ran after creating of postgres statefulset.
 4) Creates the tables in postgres database.
 5) Inserts the data into it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wVIMyEQaJNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+https://user-images.githubusercontent.com/63113063/181710786-c3a2a5b2-d082-4012-af91-8e0c09fc1fd6.mp4
 
