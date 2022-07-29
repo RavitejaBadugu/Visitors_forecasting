@@ -1,0 +1,14 @@
+cd Kubernetes
+minikube image build -t local-job jobfiles/.
+minikube image build -t local-fastapi ../fastapi/.
+kubectl apply -f postgres_secret.yaml
+kubectl apply -f storage-class.yaml
+kubectl apply -f pv.yaml
+kubectl apply -f postgres_statefulset.yaml
+kubectl apply -f job_secret.yaml 
+kubectl apply -f create_tables_job.yaml 
+kubectl apply -f fastapi_secret.yaml
+kubectl apply -f Fastapi_deployment.yaml
+minikube addons enable ingress
+kubectl apply -f ingress.yaml
+kubectl port-forward --address 0.0.0.0 svc/ingress-nginx-controller --namespace ingress-nginx 30005:8501

@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-tables
+spec:
+  completions: 1
+  parallelism: 1
+  backoffLimit: 20
+  activeDeadlineSeconds: 14400
+  template:
+    metadata:
+      name: tables-creator
+    spec:
+      containers:
+      - name: table-creator
+        image: local-job
+        imagePullPolicy: Never
+        envFrom:
+          - secretRef:
+              name: job-creds
+      restartPolicy: Never

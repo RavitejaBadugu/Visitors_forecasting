@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+spec:
+  selector:
+    matchLabels:
+      type: DB
+  serviceName: write-db-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        type: DB
+    spec:
+      containers:
+      - name: postgres
+        image: postgres
+        resources:
+          limits:
+            memory: "2Gi"
+        ports:
+        - containerPort: 5432
+        envFrom:
+        - secretRef:
+            name: postgres-creds
+        env:
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        volumeMounts:
+        - name: my-vol
+          mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+  - metadata:
+      name: my-vol
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: postgres-storage
+      resources:
+        requests:
+          storage: 2Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: write-db-service
+spec:
+  clusterIP: None
+  selector:
+    type: DB
+  ports:
+  - port: 5432
+    targetPort: 5432
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: read-db-service
+spec:
+  selector:
+    type: DB
+  ports:
+  - port: 5432
+    targetPort: 5432
