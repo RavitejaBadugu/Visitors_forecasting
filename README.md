@@ -1,5 +1,17 @@
+
+# Recruit Restaurant Visitor Forecasting
+
+
 This project uses the data from https://www.kaggle.com/competitions/recruit-restaurant-visitor-forecasting
 Our task is to forecast the number of visitors to the restaurants which are given for 39 days.
+In my training notebook **restaurants-visitors.ipynb** I tried different models
+and created many features. The Features summary is
+
+The models which I tried are XGBOOST,Lightgbm,Neural Networks and LSTM.
+The submission score which I got is:
+![Screenshot 2022-08-02 220825](https://user-images.githubusercontent.com/63113063/182427741-0cc66990-82a7-416b-a356-f766105e44dd.png)
+
+
 I made a web application where I also provide analytics about the restaurants and also the forecasting.
 And deployed the backend in minikube cluster running in aws ec2 instance.
 The componenets created in minikube are:
@@ -18,6 +30,7 @@ Now I can access it at browser as localhost:30005.
 For Front-end I ran Streamlit I ran locally. It has two env variables which are backend-end port and host.
 
 Purpose of Job:
+
 This job we need to ran after creating of postgres statefulset.
 1) It retrives the data from s3 bucket.
 2) It runs the preprocess.py file
