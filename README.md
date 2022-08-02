@@ -16,7 +16,7 @@ kubectl port-forward --address 0.0.0.0 svc/ingress-nginx-controller -n ingress-n
 ```
 Now I can access it at browser as localhost:30005.
 For Front-end I ran Streamlit I ran locally. It has two env variables which are backend-end port and host.
-<video src='https://github.com/RavitejaBadugu/Visitors_forecasting/blob/develop/streamlit-app-compressed.mp4' width=180/>
+
 Purpose of Job:
 This job we need to ran after creating of postgres statefulset.
 1) It retrives the data from s3 bucket.
