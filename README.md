@@ -7,6 +7,9 @@ Our task is to forecast the number of visitors to the restaurants which are give
 In my training notebook **restaurants-visitors.ipynb** I tried different models
 and created many features. The Features summary is
 
+![Screenshot 2022-08-02 221032](https://user-images.githubusercontent.com/63113063/182428138-35b62997-955e-42cf-b293-9975d044953e.png)
+
+
 The models which I tried are XGBOOST,Lightgbm,Neural Networks and LSTM.
 The submission score which I got is:
 ![Screenshot 2022-08-02 220825](https://user-images.githubusercontent.com/63113063/182427741-0cc66990-82a7-416b-a356-f766105e44dd.png)
