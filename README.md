@@ -11,7 +11,7 @@ and created many features. The Features summary is
 
 
 The models which I tried are XGBOOST,Lightgbm,Neural Networks and LSTM.
-The submission score which I got is:
+The submission score(RMSE) which I got is:
 ![Screenshot 2022-08-02 220825](https://user-images.githubusercontent.com/63113063/182427741-0cc66990-82a7-416b-a356-f766105e44dd.png)
 
 
